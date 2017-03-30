@@ -7,6 +7,7 @@ class LCNLA extends IPSModule {
     //$this->RegisterPropertyBoolean('Status', 0);
     $this->RegisterPropertyInteger('idLCNInstance', 0);
     $this->RegisterPropertyInteger('LaempchenNr', 0);
+    klk;
   }
   public function ApplyChanges() {
     parent::ApplyChanges();

@@ -1,6 +1,6 @@
 {
   "elements": [
-    { "name": "idLCNInstance", "type": "SelectInstance", "caption": "LCN Instanz" },
+    { "name": "idLCNInstance", "type": "SelectInstance", "caption": "Instanz" },
     { "name": "LaempchenNr", "type": "IntervalBox", "caption": "Nummer" }
   ]
   

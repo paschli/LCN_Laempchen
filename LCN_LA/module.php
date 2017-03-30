@@ -11,10 +11,11 @@ class LCN_LA extends IPSModule {
   public function ApplyChanges() {
     parent::ApplyChanges();
     
-    $status=$this->RegisterPropertyBoolean('Status', 0);
+    
     $this->RegisterPropertyInteger('idSourceInstance', 0); //Id der zu beobachtenden Variable
-    $statusID = $this->RegisterVariableBoolean('Status',FALSE);//
     $this->RegisterPropertyInteger('LaempchenNr', 0);	  
+    $status=$this->RegisterPropertyBoolean('Status', FALSE);
+    $statusID = $this->RegisterVariableBoolean('Status',FALSE);//
     //$DBLClickDetectId = $this->RegisterVariableBoolean('DBLClickDetect', 'DoppelKlickErkannt','', 1); //Boolean anlegen, der bei erkennung gesetzt wird 
     //$lastUpdID = $this->RegisterVariableInteger('LASTUPD','last_updated','~UnixTimestamp',3);//Hilfsvariable anlegen
     

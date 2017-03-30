@@ -1,7 +1,7 @@
 <?
 //Modul steuert ein Lämpchen eines LCN Moduls ähnlich einem Relais
 
-class LCN_LA extends IPSModule {
+class LCNLA extends IPSModule {
   public function Create() {
     parent::Create();
     //$this->RegisterPropertyBoolean('Status', 0);

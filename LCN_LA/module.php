@@ -45,7 +45,7 @@ class LCNLA extends IPSModule {
     if (!IPS_EventExists($id)) throw new Exception("Ident with name $ident is used for wrong object type");
   }*/
  
-  public function Control() {
+  public function CheckStatus() {
     if(IPS_SemaphoreEnter('LCNLA', 1000)) {
 //ID und Wert von "Status" ermitteln
       //$statusID=$this->ReadPropertyBoolean('Status');
@@ -55,7 +55,7 @@ class LCNLA extends IPSModule {
 //Lämpchen Nr. ermitteln
       //$lampNo=$this->ReadPropertyInteger('LaempchenNr');
 //Auswertung 
-      IPS_LogMessage('LCNLA-',"Starte.....................");
+      IPS_LogMessage('LCNLA',"Starte.....................");
 //Überprüfen Status und sende Befehl an LCN_Instanz
       //if($status){
       //  LCN_SetLamp($lcn_instID,$lampNo,'E');  
@@ -69,7 +69,7 @@ class LCNLA extends IPSModule {
       IPS_SemaphoreLeave('DBLClick');
      } 
      else {
-      IPS_LogMessage('LCNLA-', 'Semaphore Timeout');
+      IPS_LogMessage('LCNLA', 'Semaphore Timeout');
     }
    }
 } 

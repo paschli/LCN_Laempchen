@@ -12,23 +12,20 @@ class LCNLA extends IPSModule {
     parent::ApplyChanges();
     
     
-    $this->RegisterPropertyInteger('idSourceInstance', 0); //Id der zu beobachtenden Variable
-    $this->RegisterPropertyInteger('LaempchenNr', 0);	  
-    $status=$this->RegisterPropertyBoolean('Status', FALSE);
-    $statusID = $this->RegisterVariableBoolean('Status',FALSE);//
-    //$DBLClickDetectId = $this->RegisterVariableBoolean('DBLClickDetect', 'DoppelKlickErkannt','', 1); //Boolean anlegen, der bei erkennung gesetzt wird 
+    $this->RegisterPropertyInteger('idLCNInstance', 0); //Id der zu beobachtenden Variable
+    $this->RegisterPropertyInteger('LaempchenNr', 0);	
+    
+    //$status=$this->RegisterPropertyBoolean('Status', FALSE);
+    //$statusID = $this->RegisterVariableBoolean('Status',FALSE);//
+    //IPS_SetIcon($this->GetIDForIdent('Status'), 'Bulb');
+    
+    
+    ////$DBLClickDetectId = $this->RegisterVariableBoolean('DBLClickDetect', 'DoppelKlickErkannt','', 1); //Boolean anlegen, der bei erkennung gesetzt wird 
     //$lastUpdID = $this->RegisterVariableInteger('LASTUPD','last_updated','~UnixTimestamp',3);//Hilfsvariable anlegen
     
 //Inhalt für Skript erzeugen, das bei Erkennung ausgeführt wird 
-/*  $stringInhalt="<?\n IPS_LogMessage('DBLClick_Script','Starte User_Script.....................'); \n SetValueBoolean($DBLClickDetectId, FALSE); \n//Start your code here\n\n?>"; */
-    //Skript anlegen
-//    $scriptID = $this->RegisterScript('SCRIPT', 'DBLClickScript',$stringInhalt,2);
-//    $presentId = $this->RegisterVariableInteger('PRESENT_SINCE', 'Anwesend seit', '~UnixTimestamp', 3);
-//    $absentId = $this->RegisterVariableInteger('ABSENT_SINCE', 'Abwesend seit', '~UnixTimestamp', 3);
-//    $nameId = $this->RegisterVariableString('NAME', 'Name_Device', '', 2);
-//    IPS_SetIcon($this->GetIDForIdent('DBLClickDetect'), 'Motion');
-//    IPS_SetIcon($this->GetIDForIdent('SCRIPT'), 'Keyboard');
-    IPS_SetIcon($this->GetIDForIdent('Status'), 'Bulb');
+
+    
     
     /*if($this->ReadPropertyInteger('idSourceInstance')!=0){  
     	$this->RegisterTimer('OnVariableUpdate', 0, 'DBLC_Check($id)');

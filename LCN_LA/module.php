@@ -4,10 +4,8 @@
 class LCNLA extends IPSModule {
   public function Create() {
     parent::Create();
-    //$this->RegisterPropertyBoolean('Status', 0);
-    //$this->RegisterPropertyInteger('idLCNInstance', 0);
-    //$this->RegisterPropertyInteger('LaempchenNr', 0);
-    
+    $this->RegisterPropertyInteger('idLCNInstance', 0);
+    $this->RegisterPropertyInteger('LaempchenNr', 0); 
   }
   public function ApplyChanges() {
     parent::ApplyChanges();
@@ -15,9 +13,8 @@ class LCNLA extends IPSModule {
     $status=$this->RegisterPropertyBoolean('Status', FALSE);
     $this->RegisterPropertyInteger('idLCNInstance', 0); //Id der zu beobachtenden Variable
     $this->RegisterPropertyInteger('LaempchenNr', 0);	
-    //$status=$this->RegisterPropertyBoolean('Status', FALSE);
-    //$statusID = $this->RegisterVariableBoolean('Status',FALSE);//
-    //IPS_SetIcon($this->GetIDForIdent('Status'), 'Bulb');
+    $statusID = $this->RegisterVariableBoolean('Status',FALSE);//
+    IPS_SetIcon($this->GetIDForIdent('Status'), 'Bulb');
 //Inhalt für Skript erzeugen, das bei Erkennung ausgeführt wird 
 
     
@@ -48,21 +45,21 @@ class LCNLA extends IPSModule {
   public function CheckStatus() {
     if(IPS_SemaphoreEnter('LCNLA', 1000)) {
 //ID und Wert von "Status" ermitteln
-      //$statusID=$this->ReadPropertyBoolean('Status');
-      //$status=GetValue($statusID);
+      $statusID=$this->ReadPropertyBoolean('Status');
+      $status=GetValue($statusID);
 //ID der Instanz ermitteln   
-      //$lcn_instID=$this->ReadPropertyInteger('idLCNInstance');	
+      $lcn_instID=$this->ReadPropertyInteger('idLCNInstance');	
 //Lämpchen Nr. ermitteln
-      //$lampNo=$this->ReadPropertyInteger('LaempchenNr');
+      $lampNo=$this->ReadPropertyInteger('LaempchenNr');
 //Auswertung 
       IPS_LogMessage('LCNLA',"Starte.....................");
 //Überprüfen Status und sende Befehl an LCN_Instanz
-      //if($status){
-      //  LCN_SetLamp($lcn_instID,$lampNo,'E');  
-      //}
-      //else{
-      //  LCN_SetLamp($lcn_instID,$lampNo,'A');  
-      //}
+      if($status){
+        LCN_SetLamp($lcn_instID,$lampNo,'E');  
+      }
+      else{
+        LCN_SetLamp($lcn_instID,$lampNo,'A');  
+      }
         
         
             

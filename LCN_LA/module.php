@@ -1,4 +1,4 @@
-<?php
+<?
 //Modul steuert ein Lämpchen eines LCN Moduls ähnlich einem Relais
 
 class LCN_LA extends IPSModule {

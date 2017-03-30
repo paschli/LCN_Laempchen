@@ -4,7 +4,7 @@
 class LCN_LA extends IPSModule {
   public function Create() {
     parent::Create();
-    $this->RegisterPropertyBoolean('Status', 0);
+    //$this->RegisterPropertyBoolean('Status', 0);
     $this->RegisterPropertyInteger('idLCNInstance', 0);
     $this->RegisterPropertyInteger('LaempchenNr', 0);
   }

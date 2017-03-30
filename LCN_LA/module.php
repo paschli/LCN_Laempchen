@@ -18,11 +18,6 @@ class LCNLA extends IPSModule {
     //$status=$this->RegisterPropertyBoolean('Status', FALSE);
     //$statusID = $this->RegisterVariableBoolean('Status',FALSE);//
     //IPS_SetIcon($this->GetIDForIdent('Status'), 'Bulb');
-    
-    
-    ////$DBLClickDetectId = $this->RegisterVariableBoolean('DBLClickDetect', 'DoppelKlickErkannt','', 1); //Boolean anlegen, der bei erkennung gesetzt wird 
-    //$lastUpdID = $this->RegisterVariableInteger('LASTUPD','last_updated','~UnixTimestamp',3);//Hilfsvariable anlegen
-    
 //Inhalt für Skript erzeugen, das bei Erkennung ausgeführt wird 
 
     
@@ -53,21 +48,21 @@ class LCNLA extends IPSModule {
   public function Control() {
     if(IPS_SemaphoreEnter('LCNLA', 1000)) {
 //ID und Wert von "Status" ermitteln
-      $statusID=$this->ReadPropertyBoolean('Status');
-      $status=GetValue($statusID);
+      //$statusID=$this->ReadPropertyBoolean('Status');
+      //$status=GetValue($statusID);
 //ID der Instanz ermitteln   
-      $lcn_instID=$this->ReadPropertyInteger('idLCNInstance');	
+      //$lcn_instID=$this->ReadPropertyInteger('idLCNInstance');	
 //Lämpchen Nr. ermitteln
-      $lampNo=$this->ReadPropertyInteger('LaempchenNr');
+      //$lampNo=$this->ReadPropertyInteger('LaempchenNr');
 //Auswertung 
       IPS_LogMessage('LCNLA-'.$inst_name,"Starte.....................");
 //Überprüfen Status und sende Befehl an LCN_Instanz
-      if($status){
-        LCN_SetLamp($lcn_instID,$lampNo,'E');  
-      }
-      else{
-        LCN_SetLamp($lcn_instID,$lampNo,'A');  
-      }
+      //if($status){
+      //  LCN_SetLamp($lcn_instID,$lampNo,'E');  
+      //}
+      //else{
+      //  LCN_SetLamp($lcn_instID,$lampNo,'A');  
+      //}
         
         
             
